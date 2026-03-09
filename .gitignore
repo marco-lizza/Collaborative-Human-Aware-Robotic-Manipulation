@@ -1,0 +1,12 @@
+# ROS 2 colcon generated directories (MAI caricare queste cartelle)
+build/
+install/
+log/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS generated files
+.DS_Store
+*~
