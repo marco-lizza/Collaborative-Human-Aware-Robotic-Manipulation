@@ -678,36 +678,7 @@
 
     <!-- applicazione del plugin per la visualizzazione della posizione dei joint tramite topic-->
         <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-            <joint_name>joint1</joint_name>
-            <topic>/joint1</topic>
-        </plugin>
-        <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-            <joint_name>joint2</joint_name>
-            <topic>/joint2</topic>
-        </plugin>
-        <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-            <joint_name>joint3</joint_name>
-            <topic>/joint3</topic>
-        </plugin>
-        <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-            <joint_name>joint4</joint_name>
-            <topic>/joint4</topic>
-        </plugin>
-            <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-            <joint_name>joint5</joint_name>
-            <topic>/joint5</topic>
-        </plugin>
-        <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-            <joint_name>joint6</joint_name>
-            <topic>/joint6</topic>
-        </plugin>
-            <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-            <joint_name>joint_right</joint_name>
-            <topic>/joint_right</topic>
-        </plugin>
-        <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-            <joint_name>joint_left</joint_name>
-            <topic>/joint_left</topic>
+            <topic>/joint_states</topic>
         </plugin>
 </model>
 </sdf>

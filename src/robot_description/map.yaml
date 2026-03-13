@@ -47,49 +47,11 @@
   gz_type_name: "ignition.msgs.Double"
   direction: ROS_TO_GZ
 
-- ros_topic_name: "/joint1"
-  gz_topic_name: "/joint1"
+- ros_topic_name: "/joint_states"
+  gz_topic_name: "/joint_states"
   ros_type_name: "sensor_msgs/msg/JointState"
   gz_type_name: "ignition.msgs.Model"
   direction: GZ_TO_ROS
-
-- ros_topic_name: "/joint2"
-  gz_topic_name: "/joint2"
-  ros_type_name: "sensor_msgs/msg/JointState"
-  gz_type_name: "ignition.msgs.Model"
-  direction: GZ_TO_ROS
-
-- ros_topic_name: "/joint3"
-  gz_topic_name: "/joint3"
-  ros_type_name: "sensor_msgs/msg/JointState"
-  gz_type_name: "ignition.msgs.Model"
-  direction: GZ_TO_ROS
-
-- ros_topic_name: "/joint4"
-  gz_topic_name: "/joint4"
-  ros_type_name: "sensor_msgs/msg/JointState"
-  gz_type_name: "ignition.msgs.Model"
-  direction: GZ_TO_ROS
-
-- ros_topic_name: "/joint5"
-  gz_topic_name: "/joint5"
-  ros_type_name: "sensor_msgs/msg/JointState"
-  gz_type_name: "ignition.msgs.Model"
-  direction: GZ_TO_ROS
-
-- ros_topic_name: "/joint6"
-  gz_topic_name: "/joint6"
-  ros_type_name: "sensor_msgs/msg/JointState"
-  gz_type_name: "ignition.msgs.Model"
-  direction: GZ_TO_ROS
-
-- ros_topic_name: "/joint_right"
-  gz_topic_name: "/joint_right"
-  ros_type_name: "sensor_msgs/msg/JointState"
-  gz_type_name: "ignition.msgs.Model"
-  direction: GZ_TO_ROS
-
-- ros_topic_name: "/joint_left"
   gz_topic_name: "/joint_left"
   ros_type_name: "sensor_msgs/msg/JointState"
   gz_type_name: "ignition.msgs.Model"
