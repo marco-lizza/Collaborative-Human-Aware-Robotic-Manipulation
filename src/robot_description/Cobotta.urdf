@@ -20,10 +20,10 @@
   </joint>
   <joint name="joint3" type="continuous">
     <limit lower="0.314159" upper="2.443460" effort="100.00000" velocity="1.66187"/>
-    <origin rpy="3.14159 -0.00000 3.14159" xyz="-0.16500 0.00000 0.00000"/>
+    <origin rpy="3.14159 -0.00000 1.5708" xyz="-0.16500 0.00000 0.00000"/>
     <parent link="link_j2"/>
     <child link="link_j3"/>
-    <axis xyz="0.00000 0.00000 1.00000"/> 
+    <axis xyz="0.00000 0.00000 -1.00000"/> 
   </joint>
   <joint name="joint4" type="continuous">
     <limit lower="0.00000" upper="0.00000" effort="0.00000" velocity="5.00000"/>
@@ -37,7 +37,7 @@
     <origin rpy="-1.57080 0.00000 1.57080" xyz="-0.04200 0.00000 0.08900"/>
     <parent link="link_j4"/>
     <child link="link_j5"/>
-    <axis xyz="0.00000 0.00000 1.00000"/>
+    <axis xyz="0.00000 0.00000 -1.00000"/>
   </joint>
   <joint name="joint6" type="continuous">
     <limit lower="0.00000" upper="0.00000" effort="0.00000" velocity="5.00000"/>
