@@ -79,7 +79,7 @@
       <pose>0 0 10 0 0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
       <specular>0.2 0.2 0.2 1</specular>
-      <direction>-0.5 0.1 -0.9</direction>
+      <direction>0.5 0.1 -0.9</direction>
     </light>
 
     <model name="ground_plane">
@@ -106,6 +106,40 @@
       <pose>-7.5 -1.2 0 0 0 3.14</pose>
       <uri>file://operator/model.sdf</uri>
     </include>
+
+    <model name="textured_plane">
+      <static>true</static>
+      <pose>-6.5 -1.45 1.45 0 1.6 0</pose> 
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.001</size>
+            </box>
+          </geometry>
+        </collision>
+        
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <pbr>
+              <metal>
+                <!-- <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>-->
+                <albedo_map>file://test_hands_textures/three_fingers.png</albedo_map>
+                <!-- <albedo_map>file://test_hands_textures/one_finger.png</albedo_map>-->
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+
 
     <include>
       <name>Cup</name>

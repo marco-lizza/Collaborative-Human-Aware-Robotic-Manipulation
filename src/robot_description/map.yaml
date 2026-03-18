@@ -52,7 +52,9 @@
   ros_type_name: "sensor_msgs/msg/JointState"
   gz_type_name: "ignition.msgs.Model"
   direction: GZ_TO_ROS
-  gz_topic_name: "/joint_left"
-  ros_type_name: "sensor_msgs/msg/JointState"
-  gz_type_name: "ignition.msgs.Model"
+
+- ros_topic_name: "/camera"
+  gz_topic_name: "/camera"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "ignition.msgs.Image"
   direction: GZ_TO_ROS
