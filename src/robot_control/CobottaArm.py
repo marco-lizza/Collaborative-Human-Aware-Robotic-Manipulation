@@ -43,7 +43,7 @@ class CobottaArm:
             if clean_name in self.current_positions:
                 self.current_positions[clean_name] = position
 
-    def is_target_reached(self, target_dict: dict, tolerance: float = 0.05) -> bool:
+    def is_target_reached(self, target_dict: dict, tolerance: float = 0.03) -> bool:
         """
         Verifica se tutti i giunti sono arrivati alla posizione desiderata 
         con un certo margine di tolleranza (default 0.05 radianti).

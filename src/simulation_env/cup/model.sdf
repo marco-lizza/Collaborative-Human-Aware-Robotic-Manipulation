@@ -10,6 +10,20 @@ to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 <sdf version="1.6">
   <model name="Room_Essentials_Mug_White_Yellow">
     <link name="link_0">
+      
+      <!--sposto baricentro tazza (prima sbilanciata causa manico)-->
+      <inertial>
+        <pose>-0.015 0 0.005 0 0 0</pose>
+        <mass>0.4</mass> <inertia>
+          <ixx>0.0005</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0005</iyy>
+          <iyz>0</iyz>
+          <izz>0.0005</izz>
+        </inertia>
+      </inertial>
+
       <visual name="visual">
         <geometry>
           <mesh>
@@ -17,13 +31,30 @@ to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
           </mesh>
         </geometry>
       </visual>
+
       <collision name="collision_0">
         <geometry>
           <mesh>
             <uri>meshes/model.obj</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>5.0</mu>
+              <mu2>5.0</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>100000.0</kp>
+              <kd>100.0</kd>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
       </collision>
+
     </link>
   </model>
 </sdf>
