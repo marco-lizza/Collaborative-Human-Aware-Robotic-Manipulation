@@ -68,6 +68,7 @@ class CobottaStateMachine(Node):
                 self.get_logger().info("Azione 3 avviata")
                 self.current_state = "ACTION_3"
 
+        #action per le 1 dito rilevato, prende tazza
         elif self.current_state.startswith("ACTION_1"):
             #allineamento con la tazza
             pos0 = {
@@ -115,19 +116,67 @@ class CobottaStateMachine(Node):
                     if gesture_id == 4: 
                         self.current_state = "INIT"
             
-
-        elif self.current_state == "ACTION_2":
-            pos_esultanza = {
-                "1": 1.45, "2": 0.81, "3": 1.69, "4": -2.97, "5": -0.46, "6": -2.02,
-                "_left": 0.0, "_right": 0.00
+        #action per le 2 dita rilevate, prende piatto
+        elif self.current_state.startswith("ACTION_2"):
+            #rotazione
+            pos0 = {
+                "1": -0.96, "2": 1.30, "3": 0.31, "4": 0.00, "5": 0.00, "6": 0.00,
+                "_left": 0.0, "_right": 0.0
             }
-            self.robot.move_all_joints(pos_esultanza)
-            
-            if self.robot.is_target_reached(pos_esultanza):
-                if gesture_id == 4:
-                    self.current_state = "INIT"
+            #rotazione pinza e inclinamento pinza
+            pos1 = {
+                "1": -0.96, "2": 1.30, "3": 0.31, "4": 0.00, "5": 1.40, "6": 1.70,
+                "_left": 0.0, "_right": 0.0
+            }
+            #discesa
+            pos2 = {
+                "1": -0.96, "2": 1.55, "3": 0.31, "4": 0.00, "5": 1.40, "6": 1.70,
+                "_left": 0.0, "_right": 0.0
+            }
+            #chiusura
+            pos3 = {
+                "1": -0.96, "2": 1.55, "3": 0.31, "4": 0.00, "5": 1.50, "6": 1.70,
+                "_left": -0.02, "_right": -0.02
+            }
+            #alzata
+            pos4 = {
+                "1": -0.96, "2": 1, "3": 0.31, "4": 0.00, "5": 1.50, "6": 1.70,
+                "_left": -0.02, "_right": -0.02
+            }
 
-        elif self.current_state == "ACTION_3":
+            if(self.current_state=="ACTION_2"):
+                self.robot.move_all_joints(pos0)   
+                if self.robot.is_target_reached(pos0):
+                    self.get_logger().info("Azione 2 _ posizione 0 raggiunta")
+                    self.current_state="ACTION_2_POS0"
+
+            if(self.current_state=="ACTION_2_POS0"):
+                self.robot.move_all_joints(pos1)
+                if self.robot.is_target_reached(pos1):
+                    self.get_logger().info("Azione 2 _ posizione 1 raggiunta")
+                    self.current_state="ACTION_2_POS1"
+
+            if(self.current_state=="ACTION_2_POS1"):
+                self.robot.move_all_joints(pos2)   
+                if self.robot.is_target_reached(pos2):
+                    self.get_logger().info("Azione 2 _ posizione 2 raggiunta")
+                    self.current_state="ACTION_2_POS2"
+
+            if(self.current_state=="ACTION_2_POS2"):
+                self.robot.move_all_joints(pos3)   
+                if self.robot.is_target_reached(pos3):
+                    self.get_logger().info("Azione 2 _ posizione 3 raggiunta")
+                    self.current_state="ACTION_2_POS3"
+
+            if(self.current_state=="ACTION_2_POS3"):
+                self.robot.move_all_joints(pos4)   
+                if self.robot.is_target_reached(pos4):
+                    self.get_logger().info("Azione 2 _ posizione 4 raggiunta")
+                    if gesture_id == 4: 
+                        self.current_state = "INIT"
+
+        #action non ancora impostata
+        elif self.current_state.startswith("ACTION_3"):
             pos_saluto = {
                 "1": 1, "2": 0.74, "3": 0.32, "4": 0.02, "5": -0.52, "6": -2.01,
                 "_left": -0.01, "_right": -0.01

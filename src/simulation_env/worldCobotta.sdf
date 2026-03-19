@@ -131,7 +131,7 @@
             <pbr>
               <metal>
                 <!-- <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>-->
-                <albedo_map>file://test_hands_textures/one_finger.png</albedo_map>
+                <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>
                 <!-- <albedo_map>file://test_hands_textures/one_finger.png</albedo_map>-->
               </metal>
             </pbr>
@@ -143,7 +143,7 @@
 
     <include>
       <name>Cup</name>
-      <pose>-9.04 -1.672 1.05 0 0 1.4</pose>
+      <pose>-9.05 -1.675 1.05 0 0 1.4</pose>
       <uri>file://cup/model.sdf</uri>
     </include>
 
@@ -151,6 +151,12 @@
       <name>Table</name>
       <pose>-9.0 -2.4 0 0 0 1.57</pose>
       <uri>file://reflectivetable/model.sdf</uri>
+    </include>
+
+     <include>
+      <name>Dish</name>
+      <pose>-9.38 -1.38 1.05 0 0 0</pose>
+      <uri>file://dish-model/model.sdf</uri>
     </include>
 
   </world>

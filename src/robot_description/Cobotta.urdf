@@ -69,7 +69,7 @@
     <collision name="base_collision">
       <origin rpy="1.57080 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/coll/base.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/coll/base.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </collision>
     <inertial>
@@ -81,7 +81,7 @@
       <origin rpy="1.57080 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
       <material name="Materiale.003"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/dae/base.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/dae/base.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </visual>
   </link>
@@ -109,7 +109,7 @@
       <origin rpy="1.57080 0.00000 0.00000" xyz="0.04450 0.19000 -0.35700"/>
       <material name="Materiale.001"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/dae/CAMERA_SET2_ASM.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/dae/CAMERA_SET2_ASM.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </visual>
   </link>
@@ -117,7 +117,7 @@
     <collision name="hand_f2_collision">
       <origin rpy="1.57080 1.57080 0.00000" xyz="-0.00000 0.05900 -0.01500"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/coll/hand_f2.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/coll/hand_f2.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </collision>
     <inertial>
@@ -129,7 +129,7 @@
       <origin rpy="1.57080 1.57080 0.00000" xyz="-0.00000 0.05900 -0.01500"/>
       <material name="Materiale.009"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/dae/hand_f2.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/dae/hand_f2.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </visual>
   </link>
@@ -137,7 +137,7 @@
     <collision name="hand_f_collision">
       <origin rpy="1.57080 -1.57080 0.00000" xyz="0.00000 0.05950 -0.01500"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/coll/hand_f.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/coll/hand_f.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </collision>
     <inertial>
@@ -149,7 +149,7 @@
       <origin rpy="1.57080 -1.57080 0.00000" xyz="0.00000 0.05950 -0.01500"/>
       <material name="Materiale.008"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/dae/hand_f.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/dae/hand_f.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </visual>
   </link>
@@ -157,7 +157,7 @@
     <collision name="j2_collision">
       <origin rpy="1.57080 0.00000 0.00000" xyz="0.00000 0.00000 -0.10800"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/coll/j2.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/coll/j2.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </collision>
     <inertial>
@@ -169,7 +169,7 @@
       <origin rpy="1.57080 0.00000 0.00000" xyz="0.00000 0.00000 -0.10800"/>
       <material name="Materiale.005"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/dae/j2.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/dae/j2.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </visual>
   </link>
@@ -177,7 +177,7 @@
     <collision name="j1Starm_collision">
       <origin rpy="1.57080 -1.57080 0.00000" xyz="0.18000 0.00000 -0.06200"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/coll/j1Starm.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/coll/j1Starm.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </collision>
     <inertial>
@@ -189,7 +189,7 @@
       <origin rpy="1.57080 -1.57080 0.00000" xyz="0.18000 0.00000 -0.06200"/>
       <material name="Materiale"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/dae/j1Starm.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/dae/j1Starm.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </visual>
   </link>
@@ -197,7 +197,7 @@
     <collision name="j34_collision">
       <origin rpy="1.57080 1.57080 0.00000" xyz="-0.34500 0.00000 0.06200"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/coll/j34.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/coll/j34.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </collision>
     <inertial>
@@ -209,7 +209,7 @@
       <origin rpy="1.57080 1.57080 0.00000" xyz="-0.34500 0.00000 0.06200"/>
       <material name="Materiale.004"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/dae/j34.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/dae/j34.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </visual>
   </link>
@@ -217,7 +217,7 @@
     <collision name="j2ndarm_collision">
       <origin rpy="0.00000 0.00000 0.00000" xyz="-0.02000 -0.35700 -0.08800"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/coll/j2ndarm.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/coll/j2ndarm.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </collision>
     <inertial>
@@ -229,7 +229,7 @@
       <origin rpy="0.00000 0.00000 0.00000" xyz="-0.02000 -0.35700 -0.08800"/>
       <material name="Materiale.006"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/dae/j2ndarm.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/dae/j2ndarm.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </visual>
   </link>
@@ -237,7 +237,7 @@
     <collision name="j6_collision">
       <origin rpy="1.57080 1.57080 0.00000" xyz="-0.35700 0.17700 -0.02200"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/coll/j6.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/coll/j6.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </collision>
     <inertial>
@@ -249,7 +249,7 @@
       <origin rpy="1.57080 1.57080 0.00000" xyz="-0.35700 0.17700 -0.02200"/>
       <material name="Materiale.007"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/dae/j6.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/dae/j6.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </visual>
   </link>
@@ -257,7 +257,7 @@
     <collision name="hand_collision">
       <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00050 0.00000 0.00100"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/coll/hand.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/coll/hand.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </collision>
     <inertial>
@@ -269,7 +269,7 @@
       <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00050 0.00000 0.00100"/>
       <material name="Materiale.002"/>
       <geometry>
-        <mesh filename="file:///home/marco/Desktop/charm_ws/src/robot_description/meshes/dae/hand.dae" scale="1.00000 1.00000 1.00000"/>
+        <mesh filename="file:///home/nicolas/Scrivania/charm_ws/src/robot_description/meshes/dae/hand.dae" scale="1.00000 1.00000 1.00000"/>
       </geometry>
     </visual>
   </link>
