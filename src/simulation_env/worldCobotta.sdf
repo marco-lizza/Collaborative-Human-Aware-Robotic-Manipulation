@@ -101,6 +101,7 @@
       <uri>file://../robot_description/Cobotta.sdf</uri>
     </include>
 
+    <!--
     <model name="textured_plane">
       <static>true</static>
       <pose>-6.5 -1.45 1.45 0 1.6 0</pose> 
@@ -124,15 +125,16 @@
             <diffuse>1 1 1 1</diffuse>
             <pbr>
               <metal>
-                <!-- <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>-->
+                 <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>
                 <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>
-                <!-- <albedo_map>file://test_hands_textures/one_finger.png</albedo_map>-->
+                <albedo_map>file://test_hands_textures/one_finger.png</albedo_map>
               </metal>
             </pbr>
           </material>
         </visual>
       </link>
     </model>
+    -->
 
     <!--
     <include>
