@@ -145,8 +145,8 @@
 
     <include>
       <name>male_visitor</name>
-      <pose>-7.5 -1.2 1 -1.57 0 -1.57</pose> 
-      <uri>file://male_visitor/model.sdf</uri>
+      <pose>-7.5 -1.2 0.9 -1.57 0 -1.57</pose>
+      <uri>file://male_visitor/male_visitor_random.sdf</uri>
     </include>
 
     <include>

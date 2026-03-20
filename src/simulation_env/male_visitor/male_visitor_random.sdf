@@ -1,0 +1,275 @@
+<?xml version="1.0" ?>
+                <sdf version="1.7">
+                <actor name="male_visitor">
+                    <pose>-7.5 -1.2 1 -1.57 0 -1.57</pose> 
+
+                    <skin>
+                    <filename>male_visitor_static.dae</filename>
+                    <scale>1.0</scale>
+                    </skin>
+
+                    <animation name="posa_statica">
+                    <filename>male_visitor_static.dae</filename>
+                    <scale>1.0</scale>
+                    <interpolate_x>false</interpolate_x>
+                    </animation>
+
+                    <animation name="gesto_1">
+                    <filename>male_visitor_gesture1.dae</filename>
+                    <scale>1.0</scale>
+                    <interpolate_x>false</interpolate_x>
+                    </animation>
+
+                    <animation name="gesto_2">
+                    <filename>male_visitor_gesture2.dae</filename>
+                    <scale>1.0</scale>
+                    <interpolate_x>false</interpolate_x>
+                    </animation>
+
+                    <script>
+                    <loop>true</loop>
+                    <auto_start>true</auto_start>
+                
+      <trajectory id="0" type="posa_statica">
+        <waypoint><time>0.00</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>4.00</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="1" type="gesto_2">
+        <waypoint><time>4.00</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>10.10</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="2" type="posa_statica">
+        <waypoint><time>10.10</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>14.10</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="3" type="gesto_2">
+        <waypoint><time>14.10</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>20.20</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="4" type="posa_statica">
+        <waypoint><time>20.20</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>24.20</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="5" type="gesto_1">
+        <waypoint><time>24.20</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>30.30</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="6" type="posa_statica">
+        <waypoint><time>30.30</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>34.30</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="7" type="gesto_2">
+        <waypoint><time>34.30</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>40.40</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="8" type="posa_statica">
+        <waypoint><time>40.40</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>44.40</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="9" type="gesto_1">
+        <waypoint><time>44.40</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>50.50</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="10" type="posa_statica">
+        <waypoint><time>50.50</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>54.50</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="11" type="gesto_1">
+        <waypoint><time>54.50</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>60.60</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="12" type="posa_statica">
+        <waypoint><time>60.60</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>64.60</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="13" type="gesto_2">
+        <waypoint><time>64.60</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>70.70</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="14" type="posa_statica">
+        <waypoint><time>70.70</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>74.70</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="15" type="gesto_1">
+        <waypoint><time>74.70</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>80.80</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="16" type="posa_statica">
+        <waypoint><time>80.80</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>84.80</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="17" type="gesto_1">
+        <waypoint><time>84.80</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>90.90</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="18" type="posa_statica">
+        <waypoint><time>90.90</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>94.90</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="19" type="gesto_1">
+        <waypoint><time>94.90</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>101.00</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="20" type="posa_statica">
+        <waypoint><time>101.00</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>105.00</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="21" type="gesto_2">
+        <waypoint><time>105.00</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>111.10</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="22" type="posa_statica">
+        <waypoint><time>111.10</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>115.10</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="23" type="gesto_2">
+        <waypoint><time>115.10</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>121.20</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="24" type="posa_statica">
+        <waypoint><time>121.20</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>125.20</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="25" type="gesto_2">
+        <waypoint><time>125.20</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>131.30</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="26" type="posa_statica">
+        <waypoint><time>131.30</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>135.30</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="27" type="gesto_2">
+        <waypoint><time>135.30</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>141.40</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="28" type="posa_statica">
+        <waypoint><time>141.40</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>145.40</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="29" type="gesto_2">
+        <waypoint><time>145.40</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>151.50</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="30" type="posa_statica">
+        <waypoint><time>151.50</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>155.50</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="31" type="gesto_2">
+        <waypoint><time>155.50</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>161.60</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="32" type="posa_statica">
+        <waypoint><time>161.60</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>165.60</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="33" type="gesto_2">
+        <waypoint><time>165.60</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>171.70</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="34" type="posa_statica">
+        <waypoint><time>171.70</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>175.70</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="35" type="gesto_1">
+        <waypoint><time>175.70</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>181.80</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="36" type="posa_statica">
+        <waypoint><time>181.80</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>185.80</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="37" type="gesto_2">
+        <waypoint><time>185.80</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>191.90</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="38" type="posa_statica">
+        <waypoint><time>191.90</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>195.90</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="39" type="gesto_1">
+        <waypoint><time>195.90</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>202.00</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="40" type="posa_statica">
+        <waypoint><time>202.00</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>206.00</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="41" type="gesto_1">
+        <waypoint><time>206.00</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>212.10</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="42" type="posa_statica">
+        <waypoint><time>212.10</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>216.10</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="43" type="gesto_1">
+        <waypoint><time>216.10</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>222.20</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="44" type="posa_statica">
+        <waypoint><time>222.20</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>226.20</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="45" type="gesto_2">
+        <waypoint><time>226.20</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>232.30</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="46" type="posa_statica">
+        <waypoint><time>232.30</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>236.30</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="47" type="gesto_2">
+        <waypoint><time>236.30</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>242.40</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="48" type="posa_statica">
+        <waypoint><time>242.40</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>246.40</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="49" type="gesto_2">
+        <waypoint><time>246.40</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>252.50</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="50" type="posa_statica">
+        <waypoint><time>252.50</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>256.50</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="51" type="gesto_2">
+        <waypoint><time>256.50</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>262.60</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="52" type="posa_statica">
+        <waypoint><time>262.60</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>266.60</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="53" type="gesto_2">
+        <waypoint><time>266.60</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>272.70</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="54" type="posa_statica">
+        <waypoint><time>272.70</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>276.70</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="55" type="gesto_1">
+        <waypoint><time>276.70</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>282.80</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="56" type="posa_statica">
+        <waypoint><time>282.80</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>286.80</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="57" type="gesto_2">
+        <waypoint><time>286.80</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>292.90</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="58" type="posa_statica">
+        <waypoint><time>292.90</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>296.90</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+      <trajectory id="59" type="gesto_1">
+        <waypoint><time>296.90</time><pose>0 0 0 0 0 0</pose></waypoint>
+        <waypoint><time>303.00</time><pose>0 0 0 0 0 0</pose></waypoint>
+      </trajectory>
+    </script>
+  </actor>
+</sdf>
