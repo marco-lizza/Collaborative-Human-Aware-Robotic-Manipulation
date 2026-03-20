@@ -100,12 +100,6 @@
       <pose>-9.0 -1.2 1.05 0 0 0</pose>
       <uri>file://../robot_description/Cobotta.sdf</uri>
     </include>
-   
-    <include>
-      <name>Operator</name>
-      <pose>-7.5 -1.2 0 0 0 3.14</pose>
-      <uri>file://operator/model.sdf</uri>
-    </include>
 
     <model name="textured_plane">
       <static>true</static>
@@ -140,6 +134,18 @@
       </link>
     </model>
 
+    <!--
+    <include>
+      <name>Operator</name>
+      <pose>-7.5 -1.2 0 0 0 3.14</pose>
+      <uri>file://operator/model.sdf</uri>
+    </include>-->
+
+    <include>
+      <name>male_visitor</name>
+      <pose>-7.5 -1.2 1 -1.57 0 -1.57</pose> 
+      <uri>file://male_visitor/model.sdf</uri>
+    </include>
 
     <include>
       <name>Cup</name>
