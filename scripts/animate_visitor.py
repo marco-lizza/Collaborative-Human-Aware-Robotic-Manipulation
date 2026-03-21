@@ -2,11 +2,11 @@ import random
 import os
 
 # --- IMPOSTAZIONI (Modifica questi tempi con i tuoi esatti) ---
-DURATA_STATICO = 4.0   # Quanti secondi l'uomo aspetta fermo tra un gesto e l'altro
-DURATA_GESTO_1 = 6.1 # Durata in secondi dell'animazione 1
-DURATA_GESTO_2 = 6.1  # Durata in secondi dell'animazione 2 (sostituisci col tuo valore!)
+DURATA_STATICO = 6.2   # Quanti secondi l'uomo aspetta fermo tra un gesto e l'altro
+DURATA_GESTO_1 = 6.2 # Durata in secondi dell'animazione 1
+DURATA_GESTO_2 = 6.2  # Durata in secondi dell'animazione 2 (sostituisci col tuo valore!)
 
-NUM_GESTI_TOTALI = 10  # Genera 30 gesti a caso. Quando finiscono (dopo circa 5-6 minuti), il loop ricomincia.
+NUM_GESTI_TOTALI = 5  # Genera n gesti a caso. Quando finiscono, il loop ricomincia.
 
 # --- MODIFICA QUESTA VARIABILE, da sistemare per renderla relativa ---
 # Percorso in cui salvare il file generato
