@@ -151,8 +151,14 @@
 
     <include>
       <name>Cup</name>
-      <pose>-9.36 -1.02 1.04 0 0 0</pose>
+      <pose>-9.36 -1.02 1.14 0 0 -0.1</pose>
       <uri>file://cup/model.sdf</uri>
+    </include>
+
+    <include>
+      <name>Cup_case</name>
+      <pose>-9.36 -1.02 1.04 0 0 0</pose>
+      <uri>file://cup_case/model.sdf</uri>
     </include>
 
     <include>
