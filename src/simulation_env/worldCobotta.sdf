@@ -145,26 +145,32 @@
 
     <include>
       <name>male_visitor</name>
-      <pose>-7.5 -1.2 1 -1.57 0 -1.57</pose> 
+      <pose>-8.0 -1.2 1 -1.57 0 -1.57</pose> 
       <uri>file://male_visitor/model.sdf</uri>
     </include>
 
     <include>
       <name>Cup</name>
-      <pose>-9.05 -1.675 1.05 0 0 1.4</pose>
+      <pose>-9.36 -1.02 1.04 0 0 0</pose>
       <uri>file://cup/model.sdf</uri>
     </include>
 
     <include>
+      <name>Dish</name>
+      <pose>-9.36 -1.38 1.04 0 0 0</pose>
+      <uri>file://plate/model.sdf</uri>
+    </include>
+
+    <include>
       <name>Table</name>
-      <pose>-9.0 -2.4 0 0 0 1.57</pose>
+      <pose>-9.0 -1.75 0 0 0 1.57</pose>
       <uri>file://reflectivetable/model.sdf</uri>
     </include>
 
-     <include>
-      <name>Dish</name>
-      <pose>-9.38 -1.38 1.05 0 0 0</pose>
-      <uri>file://dish-model/model.sdf</uri>
+    <include>
+      <name>Base</name>
+      <pose>-8.52 -1.2 1.05 0 0 1.57</pose>
+      <uri>file://base/model.sdf</uri>
     </include>
 
   </world>

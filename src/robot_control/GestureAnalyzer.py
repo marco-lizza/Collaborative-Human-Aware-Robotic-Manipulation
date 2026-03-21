@@ -17,11 +17,10 @@ class GestureAnalyzer:
         Analizza il frame e restituisce:
         1 -> un dito alzato
         2 -> due dita alzate
-        3 -> tre dita alzate
-        4 -> nessun dito, o condizione non valida
+        0 -> nessun dito, o condizione non valida
         """
         if frame is None:
-            return 4
+            return 0
 
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         risultati = self.mani.process(frame_rgb)
@@ -43,7 +42,7 @@ class GestureAnalyzer:
 
         # Controllo del pollice rimosso intenzionalmente(creava casini)
 
-        if dita_alzate in [1, 2, 3]:
+        if dita_alzate in [1, 2]:
             return dita_alzate
         else:
-            return 4
+            return 0
