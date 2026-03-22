@@ -151,16 +151,18 @@
 
     <include>
       <name>Cup</name>
-      <pose>-9.36 -1.02 1.14 0 0 -0.1</pose>
-      <uri>file://cup/model.sdf</uri>
+      <pose>-9.36 -1.02 1.14 0 0 -0.4</pose>
+      <uri>file://cup_new/model.sdf</uri>
     </include>
 
+    
     <include>
       <name>Cup_case</name>
-      <pose>-9.36 -1.02 1.04 0 0 0</pose>
-      <uri>file://cup_case/model.sdf</uri>
+      <pose>-9.36 -1.02 1.08 0 0 -0.4</pose>
+      <uri>file://cup_case_new/model.sdf</uri>
     </include>
-
+    
+    <!-- -1.93 1.24  1.42  -0.03  -1.06  0 -0.02   -0.02-->
     <include>
       <name>Dish</name>
       <pose>-9.36 -1.38 1.04 0 0 0</pose>
