@@ -1,7 +1,6 @@
 import rclpy
 from rclpy.node import Node
 import cv2
-import math
 
 from CobottaArm import CobottaArm
 from CobottaCamera import CobottaCamera
