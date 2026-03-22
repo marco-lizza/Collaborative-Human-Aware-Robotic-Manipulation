@@ -165,8 +165,14 @@
     <!-- -1.93 1.24  1.42  -0.03  -1.06  0 -0.02   -0.02-->
     <include>
       <name>Dish</name>
-      <pose>-9.36 -1.38 1.04 0 0 0</pose>
-      <uri>file://plate/model.sdf</uri>
+      <pose>-9.36 -1.38 1.40 0 0 -1.1708</pose>
+      <uri>file://plate_new/model.sdf</uri>
+    </include>
+
+    <include>
+      <name>Plate_case</name>
+      <pose>-9.36 -1.38 1.14 -1.5708 0 -1.1708</pose>
+      <uri>file://plate_case/model.sdf</uri>
     </include>
 
     <include>
