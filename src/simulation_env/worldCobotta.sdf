@@ -135,20 +135,55 @@
       </link>
     </model>
     -->
+    
 
     <!--
     <include>
       <name>Operator</name>
       <pose>-7.5 -1.2 0 0 0 3.14</pose>
       <uri>file://operator/model.sdf</uri>
-    </include>-->
+    </include>
 
     <include>
       <name>male_visitor</name>
       <pose>-8.0 -1.2 1 -1.57 0 -1.57</pose> 
       <uri>file://male_visitor/model.sdf</uri>
-    </include>
+    </include>-->
 
+     <model name="textured_plane">
+      <static>true</static>
+      <pose>-8.0 -1.2 1.75 -1.57 1.57 -1.57</pose> 
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.001</size>
+            </box>
+          </geometry>
+        </collision>
+        
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 0.3 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <pbr>
+              <metal>
+                <!-- <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>-->
+                <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>
+                <!-- <albedo_map>file://test_hands_textures/one_finger.png</albedo_map>-->
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    
     <include>
       <name>Cup</name>
       <pose>-9.36 -1.02 1.14 0 0 -0.4</pose>
@@ -162,16 +197,17 @@
       <uri>file://cup_case_new/model.sdf</uri>
     </include>
     
+    
     <!-- -1.93 1.24  1.42  -0.03  -1.06  0 -0.02   -0.02-->
     <include>
-      <name>Dish</name>
-      <pose>-9.36 -1.38 1.40 0 0 -1.1708</pose>
+      <name>Plate</name>
+      <pose>-9.40 -1.38 1.40 0 0 -1.2520</pose>
       <uri>file://plate_new/model.sdf</uri>
     </include>
 
     <include>
       <name>Plate_case</name>
-      <pose>-9.36 -1.38 1.14 -1.5708 0 -1.1708</pose>
+      <pose>-9.40 -1.38 1.14 -1.5708 0 -1.2520</pose>
       <uri>file://plate_case/model.sdf</uri>
     </include>
 

@@ -1,3 +1,4 @@
+import time
 import rclpy
 from rclpy.node import Node
 import cv2
@@ -22,19 +23,38 @@ class CobottaStateMachine(Node):
         self.current_state = "INIT"
         self.window_open = False
         
-        # --- DEFINIZIONE POSIZIONI ---
-        self.a1_pos0 = {"1": 0.0, "2": 1.30, "3": 0.31, "4": 0.00, "5": 0.10, "6": 0.00, "_left": 0.0, "_right": 0.0}
-        self.a1_pos1 = {"1": 0.0, "2": 1.65, "3": 0.31, "4": 0.00, "5": 0.10, "6": 0.00, "_left": 0.0, "_right": 0.0}
-        self.a1_pos2 = {"1": 0.0, "2": 1.65, "3": 0.31, "4": 0.00, "5": 0.10, "6": 0.00, "_left": -0.02, "_right": -0.02}
-        self.a1_pos3 = {"1": 0.0, "2": 1.30, "3": 0.31, "4": 0.00, "5": 0.10, "6": 0.00, "_left": -0.02, "_right": -0.02}
+        # Variabili per la gestione dinamica delle traiettorie
+        self.current_trajectory = []
+        self.current_step = 0
+        
+        # --- DEFINIZIONE TRAIETTORIE (Liste di dizionari) ---
+        
+        # Traiettoria 1: Tazza
+        self.action_1_trajectory = [
+            {"1": -1.90, "2": 0.0, "3": 0.31, "4": 0.00, "5": 0.10, "6": 0.00, "_left": 0.0, "_right": 0.0},
+            {"1": -1.90, "2": 0.90, "3": 1.62, "4": 0.00, "5": 0.10, "6": 0.00, "_left": 0.0, "_right": 0.0},
+            {"1": -1.90, "2": 1.25, "3": 1.58, "4": 0.00, "5": -1.02, "6": 0.00, "_left": 0.0, "_right": 0.0},
+            {"1": -1.90, "2": 1.25, "3": 1.58, "4": 0.00, "5": -1.02, "6": 0.00, "_left": -0.02, "_right": -0.02},
+            {"1": -1.90, "2": 1.00, "3": 1.50, "4": 0.00, "5": -0.80, "6": 0.00, "_left": -0.02, "_right": -0.02},
+            {"1": -1.90, "2": 0.40, "3": 1.50, "4": 0.00, "5": -0.80, "6": 0.00, "_left": -0.02, "_right": -0.02},
+            {"1": 1.65, "2": 0.40, "3": 1.50, "4": 0.00, "5": -0.80, "6": 0.00, "_left": -0.02, "_right": -0.02}, # presa tazza -> gira
+            {"1": 1.35, "2": 0.99, "3": 1.50, "4": 0.00, "5": -0.80, "6": 0.00, "_left": -0.02, "_right": -0.02}, # si abbassa
+            {"1": 1.35, "2": 0.99, "3": 1.50, "4": 0.00, "5": -0.80, "6": 0.00, "_left": 0.0, "_right": 0.0}      # molla tazza
+        ]
 
-        self.a2_pos0 = {"1": -0.96, "2": 1.30, "3": 0.31, "4": 0.00, "5": 0.00, "6": 0.00, "_left": 0.0, "_right": 0.0}
-        self.a2_pos1 = {"1": -0.96, "2": 1.30, "3": 0.31, "4": 0.00, "5": 1.40, "6": 1.70, "_left": 0.0, "_right": 0.0}
-        self.a2_pos2 = {"1": -0.96, "2": 1.55, "3": 0.31, "4": 0.00, "5": 1.40, "6": 1.70, "_left": 0.0, "_right": 0.0}
-        self.a2_pos3 = {"1": -0.96, "2": 1.55, "3": 0.31, "4": 0.00, "5": 1.50, "6": 1.70, "_left": -0.02, "_right": -0.02}
-        self.a2_pos4 = {"1": -0.96, "2": 1.00, "3": 0.31, "4": 0.00, "5": 1.50, "6": 1.70, "_left": -0.02, "_right": -0.02}
+        # Traiettoria 2: Piatto
+        self.action_2_trajectory = [
+            {"1": -1.289, "2": 0.625, "3": 1.480, "4": 2.214, "5": 0.030, "6": 2.425, "_left": 0.0, "_right": 0.0},
+            {"1": -1.289, "2": 0.925, "3": 1.380, "4": 2.214, "5": 0.030, "6": 2.425, "_left": 0.0, "_right": 0.0},
 
-        self.a3_saluto = {"1": 1.0, "2": 0.74, "3": 0.32, "4": 0.02, "5": -0.52, "6": -2.01, "_left": -0.01, "_right": -0.01}
+            {"1": -1.289, "2": 1.030, "3": 1.358, "4": 2.233, "5": 0.019, "6": 2.452, "_left": 0.0, "_right": 0.0},
+            {"1": -1.289, "2": 1.104, "3": 1.264, "4": 2.241, "5": 0.030, "6": 2.452, "_left": 0.0, "_right": 0.0},
+
+            {"1": -1.289, "2": 1.030, "3": 1.358, "4": 2.233, "5": 0.030, "6": 2.452,  "_left": -0.02, "_right": -0.02},
+            {"1": -1.289, "2": 0.600, "3": 1.358, "4": 2.233, "5": 0.019, "6": 2.452,  "_left": -0.02, "_right": -0.02},
+            {"1": 1.445, "2": 0.600, "3": 1.190, "4": 2.214, "5": 0.030, "6": 2.485, "_left": -0.02, "_right": -0.02},
+            {"1": 1.445, "2": 0.600, "3": 1.190, "4": 2.214, "5": 0.030, "6": 2.485, "_left": 0.0, "_right": 0.0},
+        ]
 
         self.timer = self.create_timer(0.1, self.state_machine_loop)
         self.get_logger().info("Macchina a stati Cobotta avviata.")
@@ -42,7 +62,7 @@ class CobottaStateMachine(Node):
     def state_machine_loop(self):
         gesture_id = 0
 
-        camera_active=(self.current_state == "WAITING_FOR_COMMAND")
+        camera_active = (self.current_state == "WAITING_FOR_COMMAND")
 
         # Gestione Telecamera
         if camera_active:
@@ -81,61 +101,29 @@ class CobottaStateMachine(Node):
         elif self.current_state == "WAITING_FOR_COMMAND":
             if gesture_id == 1:
                 self.get_logger().info("Azione 1 avviata (Tazza)")
-                self.current_state = "ACTION_1"
+                self.current_trajectory = self.action_1_trajectory
+                self.current_step = 0
+                self.current_state = "EXECUTING_ACTION"
+                
             elif gesture_id == 2:
                 self.get_logger().info("Azione 2 avviata (Piatto)")
-                self.current_state = "ACTION_2"
+                self.current_trajectory = self.action_2_trajectory
+                self.current_step = 0
+                self.current_state = "EXECUTING_ACTION"
 
-        # --- AZIONE 1 (Tazza) ---
-        elif self.current_state.startswith("ACTION_1"):
-            if self.current_state == "ACTION_1":
-                self.robot.move_all_joints(self.a1_pos0)   
-                if self.robot.is_target_reached(self.a1_pos0):
-                    self.current_state = "ACTION_1_POS0"
-
-            elif self.current_state == "ACTION_1_POS0":
-                self.robot.move_all_joints(self.a1_pos1)   
-                if self.robot.is_target_reached(self.a1_pos1):
-                    self.current_state = "ACTION_1_POS1"
-
-            elif self.current_state == "ACTION_1_POS1":
-                self.robot.move_all_joints(self.a1_pos2)   
-                if self.robot.is_target_reached(self.a1_pos2):
-                    self.current_state = "ACTION_1_POS2"
-
-            elif self.current_state == "ACTION_1_POS2":
-                self.robot.move_all_joints(self.a1_pos3)   
-                if self.robot.is_target_reached(self.a1_pos3):
-                    self.get_logger().info("Azione 1 completata. Ritorno in INIT.")
-                    self.current_state = "INIT"
-            
-        # --- AZIONE 2 (Piatto) ---
-        elif self.current_state.startswith("ACTION_2"):
-            if self.current_state == "ACTION_2":
-                self.robot.move_all_joints(self.a2_pos0)   
-                if self.robot.is_target_reached(self.a2_pos0):
-                    self.current_state = "ACTION_2_POS0"
-
-            elif self.current_state == "ACTION_2_POS0":
-                self.robot.move_all_joints(self.a2_pos1)
-                if self.robot.is_target_reached(self.a2_pos1):
-                    self.current_state = "ACTION_2_POS1"
-
-            elif self.current_state == "ACTION_2_POS1":
-                self.robot.move_all_joints(self.a2_pos2)   
-                if self.robot.is_target_reached(self.a2_pos2):
-                    self.current_state = "ACTION_2_POS2"
-
-            elif self.current_state == "ACTION_2_POS2":
-                self.robot.move_all_joints(self.a2_pos3)   
-                if self.robot.is_target_reached(self.a2_pos3):
-                    self.current_state = "ACTION_2_POS3"
-
-            elif self.current_state == "ACTION_2_POS3":
-                self.robot.move_all_joints(self.a2_pos4)   
-                if self.robot.is_target_reached(self.a2_pos4):
-                    self.get_logger().info("Azione 2 completata. Ritorno in INIT.")
-                    self.current_state = "INIT"
+        elif self.current_state == "EXECUTING_ACTION":
+            if self.current_step < len(self.current_trajectory):
+                
+                target_pos = self.current_trajectory[self.current_step]
+                
+                self.robot.move_all_joints(target_pos)
+                
+                if self.robot.is_target_reached(target_pos):
+                    print(f"Raggiunta posizione {self.current_step} della traiettoria.")
+                    self.current_step += 1 # Passo alla posizione successiva
+            else:
+                self.get_logger().info("Azione completata. Ritorno in INIT.")
+                self.current_state = "INIT"
 
 
 def main(args=None):

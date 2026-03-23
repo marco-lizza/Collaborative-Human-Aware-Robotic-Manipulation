@@ -492,6 +492,7 @@
         <dynamics>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
+            <damping>5.0</damping>
             <friction>0.4</friction>
         </dynamics>
     </axis>
@@ -502,7 +503,7 @@
     <pose relative_to='joint_left'>0 0 0 0 -0 0</pose>
     <inertial>
         <pose>0 0.01369 0.00538 0 -0 0</pose>
-        <mass>0.05</mass>
+        <mass>0.02</mass>
         <inertia>
             <ixx>0.0001</ixx>
             <ixy>0</ixy>
@@ -521,9 +522,9 @@
             </friction>
             <contact>
                 <ode>
-                    <kp>10000.0</kp>
-                    <kp>10.0</kp>
-                    <min_depth>0.001</min_depth>
+                    <kp>100000.0</kp>
+                    <kp>1.0</kp>
+                    <min_depth>0.002</min_depth>
                 </ode>
             </contact>
         </surface>
@@ -564,6 +565,7 @@
         <dynamics>
             <spring_reference>0</spring_reference>
             <spring_stiffness>0</spring_stiffness>
+            <damping>5.0</damping>
             <friction>0.4</friction>
         </dynamics>
     </axis>
@@ -574,7 +576,7 @@
     <pose relative_to='joint_right'>0 0 0 0 -0 0</pose>
     <inertial>
         <pose>0 0.01319 0.00538 0 -0 0</pose>
-        <mass>0.05</mass>
+        <mass>0.2</mass>
         <inertia>
             <ixx>0.0001</ixx>
             <ixy>0</ixy>
@@ -593,9 +595,9 @@
             </friction>
             <contact>
                 <ode>
-                    <kp>10000.0</kp>
-                    <kp>10.0</kp>
-                    <min_depth>0.001</min_depth>
+                    <kp>100000.0</kp>
+                    <kp>1.0</kp>
+                    <min_depth>0.002</min_depth>
                 </ode>
             </contact>
         </surface>
@@ -669,22 +671,22 @@
             <i_min>-1</i_min>
             <i_max>1</i_max>
         </plugin>
-        <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
-            <joint_name>joint_left</joint_name>
-            <p_gain>500</p_gain>
-            <d_gain>10</d_gain>
-            <i_gain>0</i_gain>
-            <i_min>-1</i_min>
-            <i_max>1</i_max>
-        </plugin>
-        <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
-            <joint_name>joint_right</joint_name>
-            <p_gain>500</p_gain>
-            <d_gain>10</d_gain>
-            <i_gain>0</i_gain>
-            <i_min>-1</i_min>
-            <i_max>1</i_max>
-        </plugin>
+    <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
+        <joint_name>joint_left</joint_name>
+        <p_gain>1000</p_gain>
+        <d_gain>20</d_gain>
+        <i_gain>0</i_gain>
+        <i_min>0</i_min>
+        <i_max>0</i_max>
+    </plugin>
+    <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
+        <joint_name>joint_right</joint_name>
+        <p_gain>1000</p_gain>
+        <d_gain>20</d_gain>
+        <i_gain>0</i_gain>
+        <i_min>0</i_min>
+        <i_max>0</i_max>
+    </plugin>
     <!--========================================================-->
 
     <!-- applicazione del plugin per la visualizzazione della posizione dei joint tramite topic-->
