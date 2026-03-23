@@ -182,9 +182,9 @@
     </include>
 
     <include>
-      <name>Base</name>
-      <pose>-8.52 -1.2 1.05 0 0 1.57</pose>
-      <uri>file://base/model.sdf</uri>
+      <name>Goal case</name>
+      <pose>-8.52 -1.2 1.14 -1.5708 0 1.57</pose>
+      <uri>file://goal_case/model.sdf</uri>
     </include>
 
   </world>
