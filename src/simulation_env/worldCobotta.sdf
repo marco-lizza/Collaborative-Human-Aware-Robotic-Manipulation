@@ -15,7 +15,7 @@
     <plugin filename="ignition-gazebo-physics-system" name="ignition::gazebo::systems::Physics"></plugin>
     
     <plugin filename="ignition-gazebo-sensors-system" name="ignition::gazebo::systems::Sensors">
-      <render_engine>ogre</render_engine>
+      <render_engine>ogre2</render_engine>
     </plugin>
     
     <plugin filename="ignition-gazebo-user-commands-system" name="ignition::gazebo::systems::UserCommands"></plugin>
@@ -29,7 +29,7 @@
           <property type="string" key="state">docked</property>
         </ignition-gui>
 
-        <engine>ogre</engine>
+        <engine>ogre2</engine>
         <!--<engine>ogre2</engine>  nel file originale c'era ogre2, all'avvio di gazebo potrebbe dare problemi, riavviare o fare "attendi"-->
         <scene>scene</scene>
 
@@ -145,7 +145,7 @@
 
     <include>
       <name>male_visitor</name>
-      <pose>-7.5 -1.2 0.9 -1.57 0 -1.57</pose>
+      <pose>0 0 0 0 0 0</pose>
       <uri>file://male_visitor/male_visitor_random.sdf</uri>
     </include>
 
