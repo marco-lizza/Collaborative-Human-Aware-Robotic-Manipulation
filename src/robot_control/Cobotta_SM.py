@@ -87,7 +87,8 @@ class CobottaStateMachine(Node):
             {"1": 1.50, "2": 0.32, "3": 1.81, "4": 1.90, "5": 0.0, "6": 2.93, "_left": 0.0, "_right": 0.0},
         ]
 
-        self.monitoring_object_time_ticks=10
+        self.monitoring_object_time_ticks=50
+        self.last_gesture_id = 4
         self.timer = self.create_timer(0.1, self.state_machine_loop)
         self.get_logger().info("Macchina a stati Cobotta avviata.")
 
@@ -122,6 +123,7 @@ class CobottaStateMachine(Node):
         elif self.current_state == "WAITING_FOR_MONITORING":
             self.robot.go_monitoring()
             if self.robot.is_target_reached(self.robot.MONITORING_POSITION):
+                self.last_gesture_id = gesture_id
                 self.get_logger().info("Posizione MONITORING raggiunta! In attesa di comandi.")
                 self.current_state = "CHECK_GOAL_POS"
 
@@ -141,42 +143,52 @@ class CobottaStateMachine(Node):
             self.robot.go_monitoring_goal_pos()
             detected_object = self.object_detector.identify_object(frame)[0]
             #detected_object = "CUP"
-        
+            self.monitoring_object_time_ticks-=1
+            print(f"count: {self.monitoring_object_time_ticks}")
+            if(self.monitoring_object_time_ticks==0):
+                print("0")
             
-            if detected_object == "EMPTY":
+                if detected_object == "EMPTY":
+                        print("empty")
+                        print(f"gesture: {self.last_gesture_id}")
+                        if self.last_gesture_id == 1:
+                            self.get_logger().info("Azione 1 avviata (Tazza)")
+                            self.current_trajectory = self.action_1_trajectory
+                            self.current_step = 0
+                            self.current_state = "EXECUTING_ACTION"
+                            print(self.current_state)
 
-                self.monitoring_object_time_ticks-=1
+                        elif self.last_gesture_id == 2:
+                            self.get_logger().info("Azione 2 avviata (Piatto)")
+                            self.current_trajectory = self.action_2_trajectory
+                            self.current_step = 0
+                            self.current_state = "EXECUTING_ACTION"
 
-                if(self.monitoring_object_time_ticks==0):
-                    if gesture_id == 1:
-                        self.get_logger().info("Azione 1 avviata (Tazza)")
-                        self.current_trajectory = self.action_1_trajectory
+                        self.monitoring_object_time_ticks=50
+                        
+                elif detected_object == "CUP": #full
+                    if self.last_gesture_id == 2: #ci va 2, 1 solo per test
+                        self.get_logger().info("Azione 3 avviata (Tazza -> tazza pos)")
+                        self.current_trajectory = self.action_3_trajectory
                         self.current_step = 0
-                        self.current_state = "EXECUTING_ACTION"
+                        self.monitoring_object_time_ticks-=1
+                        self.current_state = "RELOCATE_ACTION_CUP"
+                    else:
+                        self.current_state = "INIT"
+                    self.monitoring_object_time_ticks=50
+
                     
-                    elif gesture_id == 2:
-                        self.get_logger().info("Azione 2 avviata (Piatto)")
-                        self.current_trajectory = self.action_2_trajectory
+
+                elif detected_object == "PLATE":
+                    if self.last_gesture_id == 1:
+                        self.get_logger().info("Azione 4 avviata (piatto -> piatto pos)")
+                        self.current_trajectory = self.action_4_trajectory
                         self.current_step = 0
-                        self.current_state = "EXECUTING_ACTION"
-
-                    self.monitoring_object_time_ticks=10
-                    
-            elif detected_object == "CUP": #full
-                if gesture_id == 2: #ci va 2, 1 solo per test
-                    self.get_logger().info("Azione 3 avviata (Tazza -> tazza pos)")
-                    self.current_trajectory = self.action_3_trajectory
-                    self.current_step = 0
-                    self.monitoring_object_time_ticks-=1
-                    self.current_state = "RELOCATE_ACTION_CUP"
-
-            elif detected_object == "PLATE":
-                if gesture_id == 1:
-                    self.get_logger().info("Azione 4 avviata (piatto -> piatto pos)")
-                    self.current_trajectory = self.action_4_trajectory
-                    self.current_step = 0
-                    self.monitoring_object_time_ticks-=1
-                    self.current_state = "RELOCATE_ACTION_PLATE"
+                        self.monitoring_object_time_ticks-=1
+                        self.current_state = "RELOCATE_ACTION_PLATE"
+                    else:
+                        self.current_state = "INIT"
+                    self.monitoring_object_time_ticks=50
             
 
         # --- ESECUZIONE DINAMICA DELLE TRAIETTORIE ---
