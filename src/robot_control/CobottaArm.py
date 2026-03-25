@@ -1,3 +1,4 @@
+from time import time
 from rclpy.node import Node
 from std_msgs.msg import Float64
 from sensor_msgs.msg import JointState
@@ -36,6 +37,11 @@ class CobottaArm:
             "_left": 0.0, "_right": 0.0
         }
 
+        self.MONITORING_GOAL_POSITION = {
+            "1": 1.71, "2": 0.57, "3": 1.70, "4": 0.0, "5": 0.0, "6": 0.0, 
+            "_left": 0.0, "_right": 0.0
+        }
+
     def joint_state_callback(self, msg: JointState):
         """Aggiorna le posizioni attuali leggendo dal robot."""
         for name, position in zip(msg.name, msg.position):
@@ -43,7 +49,7 @@ class CobottaArm:
             if clean_name in self.current_positions:
                 self.current_positions[clean_name] = position
 
-    def is_target_reached(self, target_dict: dict, tolerance: float = 0.04) -> bool:
+    def is_target_reached(self, target_dict: dict, tolerance: float = 0.08) -> bool:
         """
         Verifica se tutti i giunti sono arrivati alla posizione desiderata 
         con un certo margine di tolleranza (default 0.05 radianti).
@@ -74,3 +80,7 @@ class CobottaArm:
     def go_monitoring(self):
         #self.node.get_logger().info("Cobotta in movimento verso posizione MONITORING...")
         self.move_all_joints(self.MONITORING_POSITION)
+
+    def go_monitoring_goal_pos(self):
+        #self.node.get_logger().info("Cobotta in movimento verso posizione MONITORING...")
+        self.move_all_joints(self.MONITORING_GOAL_POSITION)

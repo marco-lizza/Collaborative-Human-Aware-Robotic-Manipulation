@@ -75,7 +75,7 @@
     </gui>
 
     <light type="directional" name="sun">
-      <cast_shadows>true</cast_shadows>
+      <cast_shadows>false</cast_shadows>
       <pose>0 0 10 0 0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
       <specular>0.2 0.2 0.2 1</specular>
@@ -135,7 +135,6 @@
       </link>
     </model>
     -->
-    
 
     <!--
     <include>
@@ -174,7 +173,7 @@
             <pbr>
               <metal>
                 <!-- <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>-->
-                <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>
+                <albedo_map>file://test_hands_textures/one_finger.png</albedo_map>
                 <!-- <albedo_map>file://test_hands_textures/one_finger.png</albedo_map>-->
               </metal>
             </pbr>
@@ -183,7 +182,6 @@
       </link>
     </model>
 
-    
     <include>
       <name>Cup</name>
       <pose>-9.36 -1.02 1.14 0 0 -0.4</pose>
@@ -197,7 +195,6 @@
       <uri>file://cup_case_new/model.sdf</uri>
     </include>
     
-    
     <!-- -1.93 1.24  1.42  -0.03  -1.06  0 -0.02   -0.02-->
     <include>
       <name>Plate</name>
@@ -210,6 +207,7 @@
       <pose>-9.40 -1.38 1.14 -1.5708 0 -1.2520</pose>
       <uri>file://plate_case/model.sdf</uri>
     </include>
+    
 
     <include>
       <name>Table</name>
