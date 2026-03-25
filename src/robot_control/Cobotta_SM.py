@@ -87,7 +87,7 @@ class CobottaStateMachine(Node):
             {"1": 1.50, "2": 0.32, "3": 1.81, "4": 1.90, "5": 0.0, "6": 2.93, "_left": 0.0, "_right": 0.0},
         ]
 
-        self.monitoring_object_time_ticks=50
+        self.monitoring_object_time_ticks=40
         self.last_gesture_id = 4
         self.timer = self.create_timer(0.1, self.state_machine_loop)
         self.get_logger().info("Macchina a stati Cobotta avviata.")
@@ -146,11 +146,8 @@ class CobottaStateMachine(Node):
             self.monitoring_object_time_ticks-=1
             print(f"count: {self.monitoring_object_time_ticks}")
             if(self.monitoring_object_time_ticks==0):
-                print("0")
             
                 if detected_object == "EMPTY":
-                        print("empty")
-                        print(f"gesture: {self.last_gesture_id}")
                         if self.last_gesture_id == 1:
                             self.get_logger().info("Azione 1 avviata (Tazza)")
                             self.current_trajectory = self.action_1_trajectory
@@ -164,7 +161,7 @@ class CobottaStateMachine(Node):
                             self.current_step = 0
                             self.current_state = "EXECUTING_ACTION"
 
-                        self.monitoring_object_time_ticks=50
+                        self.monitoring_object_time_ticks=40
                         
                 elif detected_object == "CUP": #full
                     if self.last_gesture_id == 2: #ci va 2, 1 solo per test
@@ -175,7 +172,7 @@ class CobottaStateMachine(Node):
                         self.current_state = "RELOCATE_ACTION_CUP"
                     else:
                         self.current_state = "INIT"
-                    self.monitoring_object_time_ticks=50
+                    self.monitoring_object_time_ticks=40
 
                     
 
@@ -188,7 +185,7 @@ class CobottaStateMachine(Node):
                         self.current_state = "RELOCATE_ACTION_PLATE"
                     else:
                         self.current_state = "INIT"
-                    self.monitoring_object_time_ticks=50
+                    self.monitoring_object_time_ticks=20
             
 
         # --- ESECUZIONE DINAMICA DELLE TRAIETTORIE ---
