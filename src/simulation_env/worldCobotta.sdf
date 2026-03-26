@@ -149,10 +149,9 @@
       <uri>file://male_visitor/model.sdf</uri>
     </include>-->
 
-
      <model name="textured_plane_one">
       <static>true</static>
-      <pose>-7.0 -1.2 1.75 -1.57 1.57 -1.57</pose> 
+      <pose>-8.0 -1.2 1.75 -1.57 1.57 -1.57</pose> 
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -183,9 +182,9 @@
       </link>
     </model>
 
-     <model name="textured_plane_two">
+    <model name="textured_plane_two">
       <static>true</static>
-      <pose>-8.0 -1.2 1.75 -1.57 1.57 -1.57</pose> 
+      <pose>-20.0 -1.2 1.75 -1.57 1.57 -1.57</pose> 
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -216,7 +215,7 @@
       </link>
     </model>
 
-    <!--
+    
     <include>
       <name>Cup</name>
       <pose>-9.36 -1.02 1.14 0 0 -0.4</pose>
@@ -229,7 +228,7 @@
       <pose>-9.36 -1.02 1.08 0 0 -0.4</pose>
       <uri>file://cup_case_new/model.sdf</uri>
     </include>
-    -->
+    
     
     <include>
       <name>Plate</name>

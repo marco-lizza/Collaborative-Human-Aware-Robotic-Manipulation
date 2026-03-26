@@ -15,16 +15,23 @@ class ObjectDetector:
         self.last_stable_object = "EMPTY"
 
     def identify_object(self, frame):
+        """
+        Analizza il frame, disegna i marker e restituisce l'oggetto trovato e il frame modificato.
+        """
         if frame is None: 
             return "EMPTY", None
         
         gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        
+        # Rilevamento dei marker (Sintassi OpenCV < 4.7, standard in ROS 2 Humble)
         corners, ids, rejected = aruco.detectMarkers(gray_frame, self.aruco_dict, parameters=self.aruco_params)
         
         current_detection = "EMPTY"
 
         if ids is not None:
+            # Disegna i bordi verdi attorno ai marker trovati sul frame a colori
             aruco.drawDetectedMarkers(frame, corners, ids, borderColor=(0, 255, 0))
+            
             detected_ids = [marker_id[0] for marker_id in ids]
             
             if self.CUP_ID in detected_ids:
@@ -45,36 +52,3 @@ class ObjectDetector:
             self.last_stable_object = max(set(self.buffer), key=self.buffer.count)
 
         return self.last_stable_object, frame
-    def __init__(self):
-        self.aruco_dict = aruco.getPredefinedDictionary(aruco.DICT_4X4_50)
-        self.aruco_params = aruco.DetectorParameters()
-        
-        self.CUP_ID = 0
-        self.PLATE_ID = 1
-
-    def identify_object(self, frame):
-        """
-        Analizza il frame, disegna i marker e restituisce l'oggetto trovato e il frame modificato.
-        """
-        if frame is None: 
-            return "EMPTY", None
-        
-        gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        
-        # Rilevamento dei marker (Sintassi OpenCV < 4.7, standard in ROS 2 Humble)
-        corners, ids, rejected = aruco.detectMarkers(gray_frame, self.aruco_dict, parameters=self.aruco_params)
-        
-        detected_object = "EMPTY"
-
-        if ids is not None:
-            # Disegna i bordi verdi attorno ai marker trovati sul frame a colori
-            aruco.drawDetectedMarkers(frame, corners, ids, borderColor=(0, 255, 0))
-            
-            detected_ids = [marker_id[0] for marker_id in ids]
-            
-            if self.CUP_ID in detected_ids:
-                detected_object = "CUP"
-            elif self.PLATE_ID in detected_ids:
-                detected_object = "PLATE"
-        
-        return detected_object, frame
