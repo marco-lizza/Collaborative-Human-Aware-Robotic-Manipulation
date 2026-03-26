@@ -26,7 +26,7 @@ class GestureAnalyzer:
         risultati = self.mani.process(frame_rgb)
 
         if not risultati.multi_hand_landmarks:
-            return 4
+            return 0
 
         hand_landmarks = risultati.multi_hand_landmarks[0]
         

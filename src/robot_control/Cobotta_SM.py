@@ -23,7 +23,7 @@ class CobottaStateMachine(Node):
         self.analyzer = GestureAnalyzer()
         self.object_detector = ObjectDetector()
         
-        self.current_state = "INIT"
+        self.current_state = "INIT_POS"
         self.window_open = False
         
         # Variabili per la gestione dinamica delle traiettorie
@@ -74,21 +74,39 @@ class CobottaStateMachine(Node):
 
         # Traiettoria 2: Piatto
         self.action_2_trajectory = [
-            {"1": -1.289, "2": 0.625, "3": 1.480, "4": 2.214, "5": 0.030, "6": 2.425, "_left": 0.0, "_right": 0.0},
-            {"1": -1.289, "2": 0.925, "3": 1.380, "4": 2.214, "5": 0.030, "6": 2.425, "_left": 0.0, "_right": 0.0},
-            {"1": -1.289, "2": 1.030, "3": 1.358, "4": 2.233, "5": 0.019, "6": 2.452, "_left": 0.0, "_right": 0.0},
-            {"1": -1.289, "2": 1.104, "3": 1.264, "4": 2.241, "5": 0.030, "6": 2.452, "_left": 0.0, "_right": 0.0},
-            {"1": -1.289, "2": 1.030, "3": 1.358, "4": 2.233, "5": 0.030, "6": 2.452,  "_left": -0.02, "_right": -0.02},
-            {"1": -1.289, "2": 0.600, "3": 1.358, "4": 2.233, "5": 0.019, "6": 2.452,  "_left": -0.02, "_right": -0.02},
+            {"1": -0.000, "2": 0.463, "3": 1.481, "4": 0.003, "5": 0.000, "6": 0.000, "_left": 0.000, "_right": 0.000},
+            {"1": -0.000, "2": 0.463, "3": 1.481, "4": -0.007, "5": 0.000, "6": -1.522, "_left": 0.000, "_right": 0.000},
+            {"1": -0.000, "2": 0.940, "3": 1.021, "4": 0.033, "5": 0.486, "6": -1.522, "_left": 0.00, "_right": 0.00},
+            {"1": -0.000, "2": 0.940, "3": 1.021, "4": 0.033, "5": 0.486, "6": -1.522, "_left": -0.02, "_right": -0.02},
+            {"1": -0.002, "2": 0.574, "3": 1.248, "4": 0.027, "5": 0.368, "6": -1.522, "_left": -0.02, "_right": -0.02},
+            {"1": -0.003, "2": 0.120, "3": 1.249, "4": 0.026, "5": 0.369, "6": -1.522, "_left": -0.02, "_right": -0.02},
+            {"1": 1.678, "2": 0.120, "3": 1.249, "4": 0.026, "5": 0.369, "6": -1.522, "_left": -0.02, "_right": -0.02},
+            {"1": 1.678, "2": 0.927, "3": 0.567, "4": 0.026, "5": 0.287, "6": -1.522, "_left": -0.02, "_right": -0.02},
+            {"1": 1.643, "2": 1.210, "3": 0.314, "4": 0.018, "5": 0.410, "6": -1.541, "_left": -0.02, "_right": -0.02},
+            {"1": 1.643, "2": 1.210, "3": 0.314, "4": 0.018, "5": 0.410, "6": -1.541, "_left": 0.0, "_right": 0.0},
 
-            {"1": 1.50, "2": 0.600, "3": 1.190, "4": 1.891, "5": 0.012, "6": 2.93, "_left": -0.02, "_right": -0.02},
-            {"1": 1.50, "2": 1.21, "3": 0.84, "4": 1.90, "5": 0.0, "6": 2.93, "_left": -0.02, "_right": -0.02},
-            {"1": 1.50, "2": 1.21, "3": 0.84, "4": 1.90, "5": 0.0, "6": 2.93, "_left": 0.0, "_right": 0.0},
-            {"1": 1.50, "2": 0.32, "3": 1.81, "4": 1.90, "5": 0.0, "6": 2.93, "_left": 0.0, "_right": 0.0},
+            {"1": 1.692, "2": 0.558, "3": 1.731, "4": 0.007, "5": 0.031, "6": 1.554, "_left": -0.000, "_right": 0.000},
+            {"1": 1.696, "2": 1.174, "3": 1.268, "4": 0.007, "5": 0.002, "6": 1.554, "_left": 0.000, "_right": 0.000},
+            {"1": 1.695, "2": 1.309, "3": 1.054, "4": 0.007, "5": 0.002, "6": 1.554, "_left": 0.000, "_right": 0.000},
+            {"1": 1.695, "2": 1.309, "3": 1.054, "4": 0.007, "5": 0.002, "6": 1.554, "_left": 0.000, "_right": 0.000},
+            {"1": 1.695, "2": 1.309, "3": 1.054, "4": 0.007, "5": 0.002, "6": 1.554, "_left": -0.025, "_right": -0.025},
+            {"1": 1.691, "2": 0.809, "3": 1.053, "4": 0.007, "5": 0.002, "6": 1.554, "_left": -0.025, "_right": -0.025},
+            {"1": 0.007, "2": 0.809, "3": 1.052, "4": 0.007, "5": 0.002, "6": 1.554, "_left": -0.025, "_right": -0.025},
+            {"1": 0.005, "2": 0.477, "3": 1.940, "4": 0.007, "5": 0.002, "6": 1.554, "_left": -0.025, "_right": -0.025},
+            
+            {"1": 0.005, "2": 0.559, "3": 2.025, "4": 0.007, "5": 0.001, "6": 1.554, "_left": 0.000, "_right": 0.000},
+            {"1": 0.005, "2": -0.559, "3": 2.325, "4": 0.007, "5": 0.001, "6": 1.554, "_left": 0.000, "_right": 0.000},
+{"stop"},
+        ]
+
+        # Traiettoria 4:  piatto goal pos -> piatto pos
+        self.action_4_trajectory = [
+            
         ]
 
         self.monitoring_object_time_ticks=40
-        self.last_gesture_id = 4
+        self.last_gesture_id = 0
+        self.last_detected_object="EMPTY"
         self.timer = self.create_timer(0.1, self.state_machine_loop)
         self.get_logger().info("Macchina a stati Cobotta avviata.")
 
@@ -111,59 +129,59 @@ class CobottaStateMachine(Node):
             cv2.waitKey(1)
             
         # Logica degli Stati
-        if self.current_state == "INIT":
+        if self.current_state == "INIT_POS":
             self.current_state = "WAITING_FOR_IDLE"
             
         elif self.current_state == "WAITING_FOR_IDLE":
             self.robot.go_idle()
             if self.robot.is_target_reached(self.robot.IDLE_POSITION):
-                self.get_logger().info("Posizione IDLE raggiunta! Vado in MONITORING.")
-                self.current_state = "WAITING_FOR_MONITORING"
+                self.get_logger().info("Posizione IDLE raggiunta! Vado in CAM_POS per monitorare l'umano.")
+                self.current_state = "CAM_POS"
 
-        elif self.current_state == "WAITING_FOR_MONITORING":
-            self.robot.go_monitoring()
+        elif self.current_state == "CAM_POS":
+            self.robot.go_monitoring() #Movimento verso posizione di monitoraggio del gesto(CAM_POS)
             if self.robot.is_target_reached(self.robot.MONITORING_POSITION):
+                self.get_logger().info("Posizione MONITORING raggiunta. Cerco gesti...")
+                self.current_state = "CHECK_GESTURE"
+
+        elif self.current_state == "CHECK_GESTURE":
+            if gesture_id > 0: 
                 self.last_gesture_id = gesture_id
-                self.get_logger().info("Posizione MONITORING raggiunta! In attesa di comandi.")
-                self.current_state = "CHECK_GOAL_POS"
+                self.get_logger().info(f"Gesto {self.last_gesture_id} rilevato! Vado al GOAL_POS.")
+                self.current_state = "GOAL_POS"
+            # Se non c'è gesto (gesture_id == 0), rimango qui in attesa
 
-        elif self.current_state == "RELOCATE_CUP":
-            self.get_logger().info("Riposizionamento tazza")
-            self.current_trajectory = self.action_2_trajectory
-            self.current_step = 0
-            self.current_state = "EXECUTING_ACTION"
+        elif self.current_state == "GOAL_POS":
+            self.robot.go_monitoring_goal_pos() #Movimento verso posizione di monitoraggio del goal (GOAL_POS)
+            if self.robot.is_target_reached(self.robot.MONITORING_GOAL_POSITION):
+                self.get_logger().info("Arrivato al GOAL. Controllo presenza oggetti...")
+                self.monitoring_object_time_ticks = 40 # Reset del timer per la visione
+                self.current_state = "CHECK_OBJECT"
 
-        elif self.current_state == "RELOCATE_PLATE":
-            self.get_logger().info("Riposizionamento piatto")
-            self.current_trajectory = self.action_4_trajectory
-            self.current_step = 0
-            self.current_state = "EXECUTING_ACTION"
-
-        elif self.current_state == "CHECK_GOAL_POS":
-            self.robot.go_monitoring_goal_pos()
+        elif self.current_state == "CHECK_OBJECT":
+            # Analisi dell'oggetto tramite visione
             detected_object = self.object_detector.identify_object(frame)[0]
-            #detected_object = "CUP"
-            self.monitoring_object_time_ticks-=1
-            print(f"count: {self.monitoring_object_time_ticks}")
-            if(self.monitoring_object_time_ticks==0):
+            self.monitoring_object_time_ticks -= 1
             
-                if detected_object == "EMPTY":
-                        if self.last_gesture_id == 1:
-                            self.get_logger().info("Azione 1 avviata (Tazza)")
-                            self.current_trajectory = self.action_1_trajectory
-                            self.current_step = 0
-                            self.current_state = "EXECUTING_ACTION"
-                            print(self.current_state)
+            if detected_object != "EMPTY":
+                self.get_logger().info(f"Rilevato oggetto: {detected_object}")
+                self.last_detected_object = detected_object
+            
+            if self.monitoring_object_time_ticks <= 0:
+                # Una volta terminata l'osservazione, decido la traiettoria
+                if self.last_detected_object == "EMPTY":
+                    print(self.last_gesture_id)
+                    if self.last_gesture_id == 1:
+                        self.get_logger().info("Azione: PLACE_CUP (Tazza)")
+                        self.current_trajectory = self.action_1_trajectory
+                        self.current_state = "EXECUTING_ACTION"
+                    elif self.last_gesture_id == 2:
+                        self.get_logger().info("Azione: PLACE_PLATE (Piatto)")
+                        self.current_trajectory = self.action_2_trajectory
+                        self.current_state = "EXECUTING_ACTION"
+                    self.current_step = 0
 
-                        elif self.last_gesture_id == 2:
-                            self.get_logger().info("Azione 2 avviata (Piatto)")
-                            self.current_trajectory = self.action_2_trajectory
-                            self.current_step = 0
-                            self.current_state = "EXECUTING_ACTION"
-
-                        self.monitoring_object_time_ticks=40
-                        
-                elif detected_object == "CUP": #full
+                elif self.last_detected_object == "CUP":
                     if self.last_gesture_id == 2: #ci va 2, 1 solo per test
                         self.get_logger().info("Azione 3 avviata (Tazza -> tazza pos)")
                         self.current_trajectory = self.action_3_trajectory
@@ -171,12 +189,10 @@ class CobottaStateMachine(Node):
                         self.monitoring_object_time_ticks-=1
                         self.current_state = "RELOCATE_ACTION_CUP"
                     else:
-                        self.current_state = "INIT"
+                        self.current_state = "INIT_POS"
                     self.monitoring_object_time_ticks=40
 
-                    
-
-                elif detected_object == "PLATE":
+                elif self.last_detected_object == "PLATE":
                     if self.last_gesture_id == 1:
                         self.get_logger().info("Azione 4 avviata (piatto -> piatto pos)")
                         self.current_trajectory = self.action_4_trajectory
@@ -184,9 +200,25 @@ class CobottaStateMachine(Node):
                         self.monitoring_object_time_ticks-=1
                         self.current_state = "RELOCATE_ACTION_PLATE"
                     else:
-                        self.current_state = "INIT"
-                    self.monitoring_object_time_ticks=20
-            
+                        self.current_state = "INIT_POS"
+                    self.monitoring_object_time_ticks=40
+                
+                else:
+                    # Se l'oggetto non è coerente, torna in INIT come da diagramma
+                    self.current_state = "INIT_POS"
+
+        elif self.current_state == "RELOCATE_CUP":
+            self.get_logger().info("Riposizionamento tazza")
+            self.current_trajectory = self.action_1_trajectory
+            self.current_step = 0
+            self.current_state = "EXECUTING_ACTION"
+
+        elif self.current_state == "RELOCATE_PLATE":
+            self.get_logger().info("Riposizionamento piatto")
+            self.current_trajectory = self.action_2_trajectory
+            self.current_step = 0
+            self.current_state = "EXECUTING_ACTION"
+
 
         # --- ESECUZIONE DINAMICA DELLE TRAIETTORIE ---
         elif self.current_state == "EXECUTING_ACTION":
@@ -205,8 +237,8 @@ class CobottaStateMachine(Node):
                     self.current_step += 1 # Passo alla posizione successiva
             else:
                 # Se l'indice ha superato la lunghezza della lista, l'azione è finita
-                self.get_logger().info("Azione completata. Ritorno in INIT.")
-                self.current_state = "INIT"
+                self.get_logger().info("Azione completata. Ritorno in INIT_POS.")
+                self.current_state = "INIT_POS"
 
         elif self.current_state == "RELOCATE_ACTION_CUP":
             # Controllo se ci sono ancora posizioni da raggiungere nella lista
@@ -224,7 +256,7 @@ class CobottaStateMachine(Node):
                     self.current_step += 1 # Passo alla posizione successiva
             else:
                 # Se l'indice ha superato la lunghezza della lista, l'azione è finita
-                self.get_logger().info("Azione completata. Ritorno in INIT.")
+                self.get_logger().info("Azione completata. Ritorno in INIT_POS.")
                 self.current_state = "RELOCATE_PLATE"
 
         elif self.current_state == "RELOCATE_ACTION_PLATE":
