@@ -141,15 +141,15 @@
       <name>Operator</name>
       <pose>-7.5 -1.2 0 0 0 3.14</pose>
       <uri>file://operator/model.sdf</uri>
-    </include>
+    </include>-->
 
     <include>
       <name>male_visitor</name>
-      <pose>-8.0 -1.2 1 -1.57 0 -1.57</pose> 
-      <uri>file://male_visitor/model.sdf</uri>
-    </include>-->
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose> 
+      <uri>file://male_visitor/male_visitor_random.sdf</uri>
+    </include>
 
-     <model name="textured_plane_one">
+    <!--<model name="textured_plane_one">
       <static>true</static>
       <pose>-8.0 -1.2 1.75 -1.57 1.57 -1.57</pose> 
       <link name="link">
@@ -172,9 +172,7 @@
             <diffuse>1 1 1 1</diffuse>
             <pbr>
               <metal>
-                <!-- <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>-->
                 <albedo_map>file://test_hands_textures/one_finger.png</albedo_map>
-                <!-- <albedo_map>file://test_hands_textures/one_finger.png</albedo_map>-->
               </metal>
             </pbr>
           </material>
@@ -205,15 +203,13 @@
             <diffuse>1 1 1 1</diffuse>
             <pbr>
               <metal>
-                <!-- <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>-->
                 <albedo_map>file://test_hands_textures/two_fingers.png</albedo_map>
-                <!-- <albedo_map>file://test_hands_textures/one_finger.png</albedo_map>-->
               </metal>
             </pbr>
           </material>
         </visual>
       </link>
-    </model>
+    </model>-->
 
     
     <include>

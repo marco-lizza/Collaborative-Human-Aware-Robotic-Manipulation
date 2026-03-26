@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+          <sdf version="1.7">
+            <actor name="male_visitor">
+              <pose>0 0 0 0 0 0</pose> 
+
+              <skin>
+                <filename>male_visitor_static.dae</filename>
+                <scale>1.0</scale>
+              </skin>
+
+              <animation name="posa_statica">
+                <filename>male_visitor_static.dae</filename>
+                <scale>1.0</scale>
+                <interpolate_x>false</interpolate_x>
+              </animation>
+              <animation name="gesto_1">
+                <filename>male_visitor_gesture1.dae</filename>
+                <scale>1.0</scale>
+                <interpolate_x>false</interpolate_x>
+              </animation>
+              <animation name="gesto_2">
+                <filename>male_visitor_gesture2.dae</filename>
+                <scale>1.0</scale>
+                <interpolate_x>false</interpolate_x>
+              </animation>
+
+              <script>
+                <loop>true</loop>
+                <auto_start>true</auto_start>
+                <trajectory id="0" type="posa_statica">
+        <waypoint><time>0.00</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+        <waypoint><time>4.00</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+      </trajectory>
+      <trajectory id="1" type="gesto_1">
+        <waypoint><time>4.00</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+        <waypoint><time>10.10</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+      </trajectory>
+      <trajectory id="2" type="posa_statica">
+        <waypoint><time>10.10</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+        <waypoint><time>14.10</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+      </trajectory>
+      <trajectory id="3" type="gesto_1">
+        <waypoint><time>14.10</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+        <waypoint><time>20.20</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+      </trajectory>
+      <trajectory id="4" type="posa_statica">
+        <waypoint><time>20.20</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+        <waypoint><time>24.20</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+      </trajectory>
+      <trajectory id="5" type="gesto_2">
+        <waypoint><time>24.20</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+        <waypoint><time>30.30</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+      </trajectory>
+      <trajectory id="6" type="posa_statica">
+        <waypoint><time>30.30</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+        <waypoint><time>34.30</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+      </trajectory>
+      <trajectory id="7" type="gesto_1">
+        <waypoint><time>34.30</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+        <waypoint><time>40.40</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+      </trajectory>
+      <trajectory id="8" type="posa_statica">
+        <waypoint><time>40.40</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+        <waypoint><time>44.40</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+      </trajectory>
+      <trajectory id="9" type="gesto_2">
+        <waypoint><time>44.40</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+        <waypoint><time>50.50</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+      </trajectory>
+      <trajectory id="10" type="posa_statica">
+        <waypoint><time>50.50</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+        <waypoint><time>54.50</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+      </trajectory>
+      <trajectory id="11" type="gesto_2">
+        <waypoint><time>54.50</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+        <waypoint><time>60.60</time><pose>-7.5 -1.2 0.9 -1.57 0.0 -1.57</pose></waypoint>
+      </trajectory>
+    </script>
+  </actor>
+</sdf>

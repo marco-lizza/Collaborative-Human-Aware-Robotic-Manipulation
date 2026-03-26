@@ -12,6 +12,8 @@ from CobottaCamera import CobottaCamera
 from ObjectDetector import ObjectDetector
 from GestureAnalyzer import GestureAnalyzer
 
+MONITORING_OBJECT_TIME_TICKS = 20
+
 class CobottaStateMachine(Node):
     """Nodo principale che gestisce la logica di alto livello e gli stati."""
     def __init__(self):
@@ -122,7 +124,7 @@ class CobottaStateMachine(Node):
             
         ]
 
-        self.monitoring_object_time_ticks=40
+        self.monitoring_object_time_ticks = MONITORING_OBJECT_TIME_TICKS
         self.last_gesture_id = 0
         self.last_detected_object="EMPTY"
         self.timer = self.create_timer(0.1, self.state_machine_loop)
@@ -191,7 +193,7 @@ class CobottaStateMachine(Node):
             self.robot.go_monitoring_goal_pos()  #Movimento verso posizione di monitoraggio del goal (GOAL_POS)
             if self.robot.is_target_reached(self.robot.MONITORING_GOAL_POSITION):
                 self.get_logger().info("Posizione di monitoraggio goal raggiunta!")
-                self.monitoring_object_time_ticks = 40 # Reset del timer per la visione
+                self.monitoring_object_time_ticks = MONITORING_OBJECT_TIME_TICKS # Reset del timer per la visione
                 self.current_state = "CHECK_OBJECT"
 
         elif self.current_state == "CHECK_OBJECT":
@@ -222,6 +224,7 @@ class CobottaStateMachine(Node):
                         self.current_step = 0
                     else:
                         self.current_state = "INIT_POS"
+                        self.get_logger().info("Rilevato gesto ma oggetto già in posizione, ritorno in INIT_POS")
 
                 elif self.last_detected_object == "PLATE":
                     if self.last_gesture_id == 1:
@@ -230,6 +233,7 @@ class CobottaStateMachine(Node):
                         self.current_step = 0
                     else:
                         self.current_state = "INIT_POS"
+                        self.get_logger().info("Rilevato gesto ma oggetto già in posizione, ritorno in INIT_POS")
 
                 else:
                     # Se l'oggetto non è coerente, torna in INIT
