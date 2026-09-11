@@ -1,6 +1,6 @@
-![Demo](https://marco-lizza.onrender.com/images/projects/CHARM.gif)
-
 # Progetto di Robotica Collaborativa (ROS 2 Humble + Gazebo Fortress)
+
+![Demo](https://marco-lizza.onrender.com/images/projects/CHARM.gif)
 
 Questo repository contiene il workspace ROS 2 per la simulazione di un task collaborativo uomo-robot. Il progetto è sviluppato per essere eseguito su **Ubuntu 22.04** con **ROS 2 Humble**.
 
